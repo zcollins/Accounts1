@@ -8,7 +8,7 @@
 ?>
 
 
-<?php if(empty($_POST)) { ?>                //And check to make sure that no cookie exists
+<?php if(empty($_POST) && (!isset( $_COOKIE['username']  ))) { ?>                //If there is no data, and no cookie exists, display form
     <form action="" method="POST">
         <h3>Enter your credentials</h3>
         Username: <input type="text" name="username"><br>
@@ -30,10 +30,4 @@
     echo $checker->checkCredentials($_POST['username'],$_POST['password']);
 
 
-
 } ?>
-
-</body>
-</html>
-
-
