@@ -51,10 +51,11 @@ class Account {
 
         foreach($accounts as $account) {
             if ($account['username'] == $this->username) {
-                fwrite($file, json_encode($account['username'], $this->password));
+                fwrite($account[], json_encode($this->username, $this->password));
             }
         }
         fclose($file);
+
     }
 
     private function setPassword($password) {

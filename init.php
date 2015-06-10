@@ -6,5 +6,4 @@ $account = \Accounts\Account::create('zcollins', '123');
 
 $account->save();
 
-echo ($account->password);
-
+echo 'does not echo';
