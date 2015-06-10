@@ -41,22 +41,22 @@ class Account {
       //  $account->password = $json['password'];
     }
 
-    public function save(Account $save) {
+    public function save() {
         /**
          * Find account in json file and save contents of $this->password to it
          */
 
-        $file = fopen("creds.json", "r+", false);
+        $file = fopen("creds.json", "a", false);
         $accounts = json_decode(fread($file, filesize($file)), true);
 
-        foreach($accounts->username as $account)
-        {
-            if($account->username == $account->username)
+        foreach($accounts as $account) {
+            if($account['username'] == $this->username)
             {
-               fwrite($file, json_encode($account->password, $account->setPassword($save->password)));
+               fwrite($file, json_encode($account['username'], $account->setPassword($this->password)));
+                echo var_dump($account);
             }
         }
-        var_dump((json_decode($file, filesize($file), true)));
+
         fclose($file);
     }
 
