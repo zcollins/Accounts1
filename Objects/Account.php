@@ -56,7 +56,7 @@ class Account {
             }
         }
 
-        var_dump($account);
+       echo var_dump($account);
 
         fclose($file);
     }
