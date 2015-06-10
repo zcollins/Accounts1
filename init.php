@@ -1,5 +1,5 @@
 <?php
-
+echo 'hello';
 $account = \Accounts\Account::create('zcollins', '123');
 
 /**
