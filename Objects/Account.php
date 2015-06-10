@@ -55,7 +55,6 @@ class Account {
             }
         }
         fclose($file);
-        echo 'hello';
     }
 
     private function setPassword($password) {
