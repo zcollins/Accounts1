@@ -14,9 +14,9 @@ class Account {
     public static function create($username, $password) {
         $account = new Account();
 
-        $account->username = $username;
+        echo $account->username = $username;
 
-        $account->setPassword($password);
+        echo $account->setPassword($password);
 
         return $account;
     }
@@ -51,7 +51,7 @@ class Account {
 
         foreach($accounts as $account) {
             if ($account['username'] == $this->username) {
-                fwrite($account[], json_encode($this->username, $this->password));
+                fwrite($file, json_encode($this->username, $this->password));
             }
         }
         fclose($file);
