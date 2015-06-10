@@ -55,7 +55,7 @@ class Account {
                fwrite($file, json_encode($account['username'], $this->password));
             }
         }
-
+        echo 'hello';
         fclose($file);
     }
 
