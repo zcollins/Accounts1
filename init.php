@@ -6,3 +6,4 @@ $account->save();
 
 echo ($account->password);
 
+echo 'test';
