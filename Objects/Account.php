@@ -46,16 +46,17 @@ class Account {
          * Find account in json file and save contents of $this->password to it
          */
 
-        $file = fopen("creds.json", "a", false);
+        $file = fopen("creds.json", "r+", false);
         $accounts = json_decode(fread($file, filesize($file)), true);
 
         foreach($accounts as $account) {
             if($account['username'] == $this->username)
             {
-               fwrite($file, json_encode($account['username'], $account->setPassword($this->password)));
-                echo var_dump($account);
+               fwrite($file, json_encode($account['username'], $this->password));
             }
         }
+
+        var_dump($account);
 
         fclose($file);
     }
