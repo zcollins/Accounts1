@@ -50,13 +50,12 @@ class Account {
         $accounts = json_decode(fread($file, filesize($file)), true);
 
         foreach($accounts as $account) {
-            if($account['username'] == $this->username)
-            {
-               fwrite($file, json_encode($account['username'], $this->password));
+            if ($account['username'] == $this->username) {
+                fwrite($file, json_encode($account['username'], $this->password));
             }
         }
-        echo 'hello';
         fclose($file);
+        echo 'hello';
     }
 
     private function setPassword($password) {
