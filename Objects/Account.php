@@ -14,9 +14,9 @@ class Account {
     public static function create($username, $password) {
         $account = new Account();
 
-        echo $account->username = $username;
+        $account->username = $username;
 
-        echo $account->setPassword($password);
+        $account->setPassword($password);
 
         return $account;
     }
@@ -49,13 +49,17 @@ class Account {
         $file = fopen("creds.json", "r+", false);
         $accounts = json_decode(fread($file, filesize($file)), true);
 
-        foreach($accounts as $account) {
+        foreach($accounts as &$account) {
             if ($account['username'] == $this->username) {
-                fwrite($file, json_encode($this->username, $this->password));
+                $account['username'] = $this->username;
+                $account['password'] = $this->password;
+                break;
             }
         }
-        fclose($file);
 
+        json_encode($accounts);
+        fwrite($file, $accounts);
+        fclose($file);
     }
 
     private function setPassword($password) {
