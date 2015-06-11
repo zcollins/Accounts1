@@ -67,3 +67,4 @@ class Account {
         return $this->password;
     }
 }
+
