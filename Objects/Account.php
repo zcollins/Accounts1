@@ -14,9 +14,14 @@ class Account {
     public static function create($username, $password) {
         $account = new Account();
 
+        echo "test-1";
+
         $account->username = $username;
 
         $account->setPassword($password);
+
+        echo "test-2";
+
 
         return $account;
     }
@@ -45,9 +50,13 @@ class Account {
         /**
          * Find account in json file and save contents of $this->password to it
          */
+        echo "test1";
 
         $file = fopen("creds.json", "r+", false);
         $accounts = json_decode(fread($file, filesize($file)), true);
+
+        echo "test2";
+
 
         foreach($accounts as &$account) {
             if ($account['username'] == $this->username) {
@@ -56,6 +65,8 @@ class Account {
                 break;
             }
         }
+
+        echo "test3";
 
         json_encode($accounts);
         fwrite($file, $accounts);
