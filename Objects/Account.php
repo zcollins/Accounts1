@@ -41,7 +41,7 @@ class Account {
       //  $account->password = $json['password'];
     }
 
-    public function save() {
+    public function save() {                                //Advantage would be that this would actually need to be called when the init happens due to the $this->   refs
         /**
          * Find account in json file and save contents of $this->password to it
          */
