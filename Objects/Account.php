@@ -14,9 +14,11 @@ class Account {
     public static function create($username, $password) {
         $account = new Account();
 
+        var_dump($username);
+
+
         $account->username = $username;
 
-        var_dump($username);
         exit();
 
         $account->setPassword($password);
