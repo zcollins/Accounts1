@@ -12,7 +12,6 @@ class Account {
     public $password;
 
     public static function create($username, $password) {
-        var_dump($username);
         $account = new Account();
 
 
