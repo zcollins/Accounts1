@@ -13,11 +13,7 @@ class Account {
 
     public static function create($username, $password) {
         $account = new Account();
-
-
         $account->username = $username;
-
-        exit();
 
         $account->setPassword($password);
 
