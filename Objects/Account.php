@@ -58,7 +58,7 @@ class Account {
             }
         }
 
-        fwrite($file, print_r($accounts));
+        fwrite($file, $accounts);
         json_encode($accounts);
         fclose($file);
     }
