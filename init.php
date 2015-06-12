@@ -3,6 +3,6 @@
 
 $account = \Accounts\Account::create('zcollins', '123');
 
-//echo var_dump($account);
-
+var_dump($account);
+exit();
 $account->save();

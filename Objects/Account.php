@@ -18,6 +18,8 @@ class Account {
 
         $account->setPassword($password);
 
+        $account->save();
+
         return $account;
     }
 
@@ -29,11 +31,10 @@ class Account {
         $file = fopen("creds.json", "r+", false);
         $accounts = json_decode(fread($file, filesize($file)), true);
 
-        foreach($accounts->username as $user)
-        {
-            if($account->username == $user->username)
-            {
-                return $user;
+        foreach($accounts as &$account) {
+            if ($account['username'] == $account->username) {
+
+                break;
             }
         }
 
