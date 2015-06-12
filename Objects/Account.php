@@ -16,6 +16,9 @@ class Account {
 
         $account->username = $username;
 
+        var_dump($username);
+        exit();
+
         $account->setPassword($password);
 
         $account->save();
