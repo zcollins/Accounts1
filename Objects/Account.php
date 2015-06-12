@@ -3,7 +3,7 @@
  *Property of Petrichor
  */
 
-namespace Accounts;
+namespace Accounts\Objects;
 
 class Account {
 
