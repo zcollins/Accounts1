@@ -60,6 +60,7 @@ class Account {
 
         fwrite($file, print_r($accounts));
         json_encode($accounts);
+        echo file_get_contents($file);
         fclose($file);
     }
 
