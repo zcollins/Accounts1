@@ -47,7 +47,7 @@ class Account {
          */
 
         $file = fopen("creds.json", "r+", false);
-        $accounts = json_decode(fread($file, filesize($file.ob_get_length())), true);
+        $accounts = json_decode(fread($file, 4000), true);
 
         foreach($accounts as &$account) {
             if ($account['username'] == $this->username) {
