@@ -47,7 +47,7 @@ class Account {
          */
 
         $file = fopen("creds.json", "r+", false);
-        $accounts = json_decode(fread($file, 4000), true);
+        $accounts = json_decode(fread($file, 4000), true);                  //get file len func in php?  why is $file of length 0?
 
         foreach($accounts as &$account) {
             if ($account['username'] == $this->username) {
@@ -57,8 +57,8 @@ class Account {
             }
         }
 
-        json_encode($accounts);
         fwrite($file, $accounts);
+        json_encode($accounts);
         fclose($file);
     }
 
@@ -67,4 +67,3 @@ class Account {
         return $this->password;
     }
 }
-
