@@ -1,6 +1,6 @@
 <html>
     <body>
-        <form action="#" method="post">
+        <form action="" method="POST">
             Username: <input type="text" name="username"><br>
             Password: <input type="text" name="password"<br>
             <br />
@@ -12,7 +12,8 @@
 <?php
 
 if(!empty($_POST)) {
-   $account = \Accounts\Account::lookup($_POST['username']);
+
+    $account = \Accounts\Account::lookup($_POST['username']);
 
    $valid = \Accounts\Model::validate($account, $_POST['password']);
 

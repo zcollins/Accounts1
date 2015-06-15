@@ -21,6 +21,8 @@ class Account {
         $account->save();
 
         return $account;
+
+
     }
 
     public static function lookup($account) {
@@ -38,8 +40,8 @@ class Account {
             }
         }
 
-      //  $account->username = $json['username'];
-      //  $account->password = $json['password'];
+        $account->username = $json['username'];
+        $account->password = $json['password'];
     }
 
     public function save() {                                //Advantage would be that this would actually need to be called when the init happens due to the $this->   refs
@@ -48,9 +50,6 @@ class Account {
          */
 
         $file = fopen("creds.json", "r+", false);
-        if ($file==false) {
-            echo "fucked";
-        }
         $accounts[] = json_decode(fread($file, 4000), true);                  //get file len func in php?  why is $file of length 0?
 
         foreach($accounts as $account) {
